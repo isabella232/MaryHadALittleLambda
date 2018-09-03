@@ -1,10 +1,10 @@
 package sample;
 
-import com.sun.glass.ui.Application;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -248,7 +248,7 @@ public class SpriteView extends StackPane {
                 arrivalHandler.handle(e);
             }
         });
-        Application.invokeLater(walking::play);
+        Platform.runLater(walking::play);
     }
     public Main.Location getLocation() {
         return location.get();
